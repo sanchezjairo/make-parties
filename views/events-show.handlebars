@@ -14,6 +14,12 @@
         <div class="list-group-item">
             {{this.name}}
         </div>
+        <div class="float-right">
+            <form class="form-inline" action="/events/{{../event.id}}/rsvps/{{this.id}}?_method=DELETE" method="post">
+              <button type="submit" class="btn btn-link btn-sm">Remove</button>
+            </form>
+          </div>
+        </div>
         {{/each}}
     </div>
 </div>
