@@ -11,13 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      
 
       // db/models/event.js
       const Event = sequelize.define('Event', {
         title: DataTypes.STRING,
         desc: DataTypes.TEXT,
         imgUrl: DataTypes.STRING //add this line (don't forget the comma above!)
+        
 }, {});
     }
     
@@ -30,5 +31,8 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Event',
   });
+  Event.associate = function(models) {
+    Event.hasMany(models.Rsvp);
+  };
   return Event;
 };
