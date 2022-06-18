@@ -1,3 +1,7 @@
+if (!process.env.PORT) {
+  require('dotenv').config();
+}
+
 // Initialize express
 const express = require('express');
 const methodOverride = require('method-override')
